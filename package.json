@@ -1,0 +1,8 @@
+{
+  "name": "issue-prisma-in-pnpm-workspace",
+  "private": true,
+  "engines": {
+    "node": ">=16.13",
+    "pnpm": ">=6.24"
+  }
+}

@@ -1,0 +1,18 @@
+datasource database {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int      @id @default(autoincrement()) @database.UnsignedInt
+  email     String   @unique @database.VarChar(128)
+  password  String   @database.VarChar(128)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
